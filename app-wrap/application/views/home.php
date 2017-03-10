@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>index</title>
-    <script src="<?php echo base_url(); ?>assets/js/vue.js"></script>
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/home.css">
+
 </head>
 <body>
-<div id="example">
-    <h1>Hello World</h1>
-    <my-component></my-component>
+    <div id="example">
+        <h1>Hello World</h1>
+        <a href="<?php echo base_url(); ?>index.php/users">登录</a>
 </div>
-
-<link rel="import" href="<?php echo base_url(); ?>assets/_link.html" >
 </body>
 </html>

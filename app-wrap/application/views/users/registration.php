@@ -7,7 +7,7 @@
 <body>
 <div class="container">
     <h2>用户注册</h2>
-    <form action="index.php/users/regist" method="post">
+    <form action="<?php echo base_url(); ?>index.php/users/regist" method="post">
         <!-- 当提交时触发signin/regist控制器 -->
         name: <input type="text" name="username"> <br/><br/>
         password: <input type="password" name="password"> <br/><br/>

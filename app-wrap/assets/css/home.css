@@ -1,1 +1,187 @@
-h1{  color: #990000;  }
+html,body{
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+a{
+    color: black;
+}
+header{
+    width: 100%;
+    height: 100vh;
+    background: url("../images/p2.jpg") no-repeat;
+    background-size: 100% 100%;
+}
+header .title{
+    position: relative;
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}
+header .title .logo{
+    position: relative;
+    width: 5em;
+    height: 5em;
+    float: left;
+    padding: 1em;
+}
+header .title .logo img{
+    width: 100%;
+    height: 100%;
+}
+header .title .logo .title-text{
+    position: absolute;
+    font-size: 1.5em;
+    width: 14em;
+    font-weight: 800;
+    top: 1em;
+    left: 3em;
+    text-shadow: .1em .1em .1em #00b000;
+}
+header .title nav{
+    float: right;
+}
+header .title nav li{
+    padding: 1em .5em;
+}
+header .title .slogan{
+    position: absolute;
+    width: 100%;
+    top: 30%;
+}
+header .title .slogan span{
+    display: block;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+header .title .slogan .slogan-text{
+    font-size: 3em;
+    transition: top 1s linear,opacity 1s linear;
+}
+header .title .slogan .first-title{
+    top: -1em;
+    opacity: 0;
+}
+header .title .slogan .first-title-show{
+    top: 0;
+    opacity: 1;
+}
+header .title .slogan .last-title{
+    top: .1em;
+    opacity: 0;
+}
+header .title .slogan .last-title-show{
+    top: 1.1em;
+    opacity: 1;
+}
+header .title .slogan .slogan-button{
+    padding: 3em;
+    top: 10em;
+    opacity: 0;
+    transition: top 1s linear,opacity 1s linear;
+}
+header .title .slogan .slogan-button-show{
+    top: 8em;
+    opacity: 1;
+}
+header .title .slogan .slogan-button button{
+    padding: .8em 3em;
+    background: none;
+    border: .2em solid white;
+    color: white;
+    outline: none;
+}
+header .title .slogan .slogan-button button:hover{
+    background: #337ab7;
+}
+header .title .slogan .slogan-button button:active{
+    border: .2em solid #00d000;
+}
+.main{
+    width: 100%;
+    height: 45em;
+}
+.main .article{
+    width: 80%;
+    float: left;
+    margin-top: 3em;
+    margin-left: 10%;
+}
+.main .article .article-wrap{
+    width: 48%;
+}
+.main .article .article-wrap .article-img{
+    width: 50%;
+    height: 14em;
+    float: left;
+}
+.main .article .article-wrap .article-img img{
+    width: 100%;
+    height: 100%;
+}
+.main .article .article-wrap .article-content{
+    width: 45%;
+    height: 14em;
+    float: left;
+    margin-left: 1em;
+}
+.main .article .article-wrap .article-content .article-title{
+    font-size: 1.8em;
+    padding: 0 .5em .2em 0;
+}
+.main .article .article-wrap .article-content .article-main{
+    text-overflow: ellipsis;
+}
+.main .article .article-wrap-full{
+    width: 100%;
+    margin: .5em auto;
+}
+.main .article .article-wrap-full .article-full-img{
+    width: 40%;
+    height: 20em;
+}
+.main .article .article-wrap-full .article-full-img img{
+    width: 100%;
+    height: 100%;
+}
+.main .article .article-wrap-full .article-full-content{
+    width: 57.5%;
+    height: 20em;
+}
+.main .article .article-wrap-full .article-full-content .article-full-title{
+    font-size: 1.8em;
+    padding: 0 .5em .2em 0;
+}
+.main .article .article-wrap-full .article-full-content .article-full-title small a{
+    color: #cccccc;
+    font-size: .8em;
+}
+footer{
+    display: block;
+    width: 100%;
+    height: 10em;
+    background: #2a2730;
+    color: #c0c0c0;
+}
+footer ul{
+    list-style: none;
+    padding: 1em 10%;
+    margin: 0;
+}
+footer ul li{
+    padding:  .5em;
+}
+footer ul li a{
+    text-overline: .1em;
+    padding: 0 .5em;
+    color: white;
+}
+
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}

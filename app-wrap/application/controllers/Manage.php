@@ -14,13 +14,18 @@ class Manage extends CI_Controller
     function index(){
         if ($this->session->userdata('s_id')) {
             //若已登录
-            $post = $this -> managemodel -> getAll();
-
-            $this->load->view('manage', $post);
+            $data['posts'] = $this -> managemodel -> getList();
+            $this->load->view('manage', $data);
         } else {
             redirect('users/login');
         }
     }
+
+    function loadManagePage(){
+        $data = $this -> managemodel -> getList();
+
+    }
+
     function loadNewPost(){
         $this -> load -> view('new');
     }

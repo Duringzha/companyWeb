@@ -45,5 +45,11 @@ class ManageModel extends CI_Model
         return $this -> db -> delete('archives');
     }
 
+    public function getList(){
+        //获得文章列表
+        $query = $this -> db -> query('select * from archives');
+        return $query -> result();
+    }
+
 
 }

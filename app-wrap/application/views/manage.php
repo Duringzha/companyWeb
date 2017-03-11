@@ -24,7 +24,7 @@
         foreach ($posts as $item):?>
         <tr>
             <td> <?php echo $item->id; ?> </td>
-            <td> <a href="#"><?php echo $item->title; ?> </a></td>
+            <td> <a href="<?php echo base_url(); ?>index.php/manage/loadpost?id=<?php echo $item->id; ?> "><?php echo $item->title; ?> </a></td>
             <td> <a href="#"><?php echo $item->modified; ?> </a></td>
             <td> <a href="#"><?php echo '编辑' ?> </a></td>
             <td> <a href="#"><?php echo '删除' ?> </a></td>

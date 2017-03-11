@@ -30,7 +30,10 @@ class Users extends CI_Controller{
         if ($user) { //若此用户存在
             if ($user[0]->password == $this->security->xss_clean($_POST['password'])) {
                 // 如果提交的密码与正确密码一致，则创建session
-                $arr = array('s_id' => $user[0]->id,);
+                $arr = array(
+                    's_id' => $user[0]->id,
+                    's_username' => $user[0]->username
+                    );
                 //设置session
                 $this->session->set_userdata($arr);
                 echo 'login successful!!!<br/>';

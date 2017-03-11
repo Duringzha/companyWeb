@@ -27,7 +27,7 @@ class ManageModel extends CI_Model
         //$post为关联数组或对象
         return $this -> db -> insert('archives',$data);
     }
-    public function upadte($id,$data){
+    public function upadte($data){
         /* 更新帖子
          * $data = array(
          * 'title' => $title
@@ -35,7 +35,7 @@ class ManageModel extends CI_Model
          * 'content' => $content
          * 'image' => $image)
          */
-        $this -> db -> where('id',$id);
+        $this -> db -> where('id',$data['id']);
         return $this -> db -> update('archives',$data);
     }
 
@@ -43,6 +43,17 @@ class ManageModel extends CI_Model
         //删除文章
         $this -> db -> where('id',$id);
         return $this -> db -> delete('archives');
+    }
+
+    public function getList(){
+        //获得文章列表
+        $query = $this -> db -> query('select * from archives');
+        return $query -> result();
+    }
+
+    public function insertArticle($data){
+        $this -> db -> insert('archives',$data);
+        return $this->db->affected_rows();
     }
 
 

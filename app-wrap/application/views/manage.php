@@ -21,13 +21,13 @@
             <td>删除</td>
         </tr>
         <?php
-        foreach ($data as $item):?>
+        foreach ($posts as $item):?>
         <tr>
             <td> <?php echo $item->id; ?> </td>
-            <td> <?php echo $item->title; ?> </td>
-            <td> <?php echo $item->modified; ?> </td>
-            <td> <?php echo '编辑' ?> </td>
-            <td><?php echo '删除' ?> </td>
+            <td> <a href="<?php echo base_url(); ?>index.php/manage/loadpost?id=<?php echo $item->id; ?> "><?php echo $item->title; ?> </a></td>
+            <td> <a href="#"><?php echo $item->modified; ?> </a></td>
+            <td> <a href="#"><?php echo '编辑' ?> </a></td>
+            <td> <a href="#"><?php echo '删除' ?> </a></td>
         </tr>
         <?php endforeach; ?>
         </tbody>

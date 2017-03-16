@@ -47,7 +47,6 @@ class Manage extends CI_Controller
         $data = array(
             'title'=> $this->security->xss_clean($_POST['title']),
             'author'=> $this->security->xss_clean($_POST['author']),
-            'image'=> $this->security->xss_clean($_POST['image']),
             'content'=> $this->security->xss_clean($_POST['content']),
             'created' => date('Y-m-d')//创建日期
         );
@@ -84,7 +83,6 @@ class Manage extends CI_Controller
             'id' => $this->input->get('id'),//获得文章编号
             'title'=> $this->security->xss_clean($_POST['title']),
             'author'=> $this->security->xss_clean($_POST['author']),
-            'image'=> $this->security->xss_clean($_POST['image']),
             'content'=> $this->security->xss_clean($_POST['content']),
             'modified' => date('Y-m-d H:s:u')//更新日期
         );
@@ -97,52 +95,50 @@ class Manage extends CI_Controller
             alert('插入失败');
             redirect( 'manage');
         }
-
     }
 
-    function uploadImage(){
-        $type = $this -> uri -> segment(3);
-        if( ($type != 111) && ($type != 222)){
+    function deletePost(){
+        $id = $this -> uri -> segment(3);
+        $this -> managemodel -> deleteById($id);
+        if( $this -> db -> affected_rows() > 0 ) {
+            //删除成功，直接回到管理页面
             redirect('manage');
-        }else {
-
-
-            $config['upload_path'] = 'images/';
-            $config['allowed_types'] = 'gif|jpg|png';
-            $config['max_size'] = '102400';
-            $config['max_width'] = '2048';
-            $config['max_height'] = '2048';
-            $config['file_name'] = date('ymdHis');//以时间戳为名
-
-            $this->load->library('upload', $config);
-
-            if ($this->upload->do_upload('image')) {
-                //上传成功
-                $upload = $this->upload->data();
-                $file_name = $upload['file_name'];//获得文件名
-                $data = array(
-                    'image_name' => $file_name,
-                    'username' => $this->session->userdata('s_username')
-                );
-                //var_dump($data);//打印文件信息
-
-            } else {
-                $data = array(
-                    'username' => $this->session->userdata('s_username'),
-                    'error' => $this->upload->display_errors(),
-                    'image_name' => ''
-                );
-                //var_dump($error);
-            }
-            if ($type == 111) {
-                $this->load->view('new', $data);
-            } elseif ($type == 222) {
-                $id = $this -> uri -> segment(4);
-                $data['post'] = $this -> managemodel -> getById($id);
-                $this->load->view('post', $data);
-            }
+        }else{
+            alert('删除失败');
+            redirect( 'manage');
         }
     }
+
+    function loadInfo(){
+        //进入编辑公司简介页
+
+        if (!$this->session->userdata('s_id')){
+            redirect('users/login');
+        }
+
+        $data['introduction'] = $this -> managemodel -> getInfo();//查找公司简介
+        $this -> load ->view('introduction', $data);//载入编辑视图
+    }
+
+    function updateInfo(){
+        //更新公司简介
+
+        if (!$this->session->userdata('s_id')){
+            redirect('users/login');
+        }
+
+        $data['info'] = $this->security->xss_clean($_POST['information']);
+
+        if( $this -> managemodel -> updateInfo($data) ){
+            //如果插入成功
+            redirect( 'manage');
+        }
+        else{
+            alert('插入失败');
+            redirect( 'manage');
+        }
+    }
+
 
 
 }

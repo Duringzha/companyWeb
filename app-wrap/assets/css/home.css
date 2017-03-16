@@ -1,7 +1,7 @@
 html,body{
     padding: 0;
     margin: 0;
-    font-size: 14px;
+    /*font-size: 14px;*/
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 a{
@@ -12,6 +12,7 @@ header{
     height: 100vh;
     background: url("../images/p2.jpg") no-repeat;
     background-size: 100% 100%;
+    overflow: hidden;
 }
 header .title{
     position: relative;
@@ -99,6 +100,106 @@ header .title .slogan .slogan-button button:hover{
 header .title .slogan .slogan-button button:active{
     border: .2em solid #00d000;
 }
+/*------------公司简介样式-------------*/
+header .introduce-body{
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+header .introduce-body .introduce-wrap, header .introduce-body .product-wrap{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+header .introduce-body .introduce-wrap .int-title{
+    position: absolute;
+    width: 100%;
+    top: 4em;
+    opacity: 0;
+    font-size: 2.5em;
+    transition: top 500ms linear,opacity 500ms linear;
+}
+header .introduce-body .product-wrap .pro-title{
+    position: absolute;
+    width: 100%;
+    top: 14em;
+    font-size: 2.5em;
+    opacity: 0;
+    transition: top 500ms linear,opacity 500ms linear;
+}
+header .introduce-body .introduce-wrap .int-content{
+    position: absolute;
+    width: 100%;
+    top: 12em;
+    opacity: 0;
+    font-size: 1.1em;
+    transition: top 500ms linear,opacity 500ms linear;
+}
+header .introduce-body .product-wrap .pro-content{
+    position: absolute;
+    width: 100%;
+    top: 34.5em;
+    font-size: 1.1em;
+    opacity: 0;
+    transition: top 500ms linear,opacity 500ms linear;
+}
+header .introduce-body .introduce-wrap .titleMove{
+    top: 3em;
+    opacity: 1;
+}
+header .introduce-body .introduce-wrap .contentMove{
+    top: 11em;
+    opacity: 1;
+}
+header .introduce-body .product-wrap .proTitleMove{
+    top: 13em;
+    opacity: 1;
+}
+header .introduce-body .product-wrap .proContentMove{
+    top: 33.5em;
+    opacity: 1;
+}
+/*------------公司简介样式-------------*/
+
+/*------------生产基地样式-------------*/
+header .fac-body{
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 5em;
+    left: 10%;
+}
+header .fac-body .fac-wrap{
+    width: 65%;
+    height: 30%;
+    margin-top: 3%;
+    border-radius: .2em;
+    background: rgba(255,255,255,.6);
+    box-shadow: 0 0 .5em #ffffff;
+}
+header .fac-body .fac-wrap .fac-img{
+    height: 100%;
+}
+header .fac-body .fac-wrap .fac-img img{
+    height: 100%;
+    border-radius: .2em;
+}
+header .fac-body .fac-wrap .fac-img-text{
+    width: 50%;
+    padding: .5em;
+    margin-left: 3%;
+}
+/*------------生产基地样式-------------*/
+/*------------联系我们样式-------------*/
+header .contact-body{
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    top: 5em;
+}
+/*------------联系我们样式-------------*/
 .main{
     width: 100%;
     height: 45em;
@@ -184,4 +285,47 @@ footer ul li a{
 }
 .right{
     float: right;
+}
+.new-main{
+    width: 80%;
+    position: relative;
+    margin: 0 auto;
+}
+.new-main .title{
+    position: relative;
+    width: 100%;
+    height: 5em;
+}
+.new-main .title .logo{
+    position: relative;
+    width: 5em;
+    height: 5em;
+    float: left;
+    padding: 1em;
+}
+.new-main .title .logo img{
+    width: 100%;
+    height: 100%;
+}
+.new-main .title .logo .title-text{
+    position: absolute;
+    font-size: 1.5em;
+    width: 14em;
+    font-weight: 800;
+    top: 1em;
+    left: 3em;
+    text-shadow: .1em .1em .1em #00b000;
+}
+.new-main .title nav{
+    float: right;
+}
+.new-main .title nav li{
+    padding: 1em .5em;
+}
+.new-main .news-list{
+    width: 100%;
+    min-height: 70vh;
+}
+.new-main .news-list table tbody td{
+    cursor: pointer;
 }

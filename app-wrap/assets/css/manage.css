@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.login-main{
+    width: 100vw;
+    height: 100vh;
+    background: #00a0df;
+}
+.login-main .login{
+    margin-top: 32vh;
+    padding: 1em;
+    border: 1px white solid;
+    border-radius: 5px;
+}
+.login-main .login button{
+    background: none;
+    padding: .5em 3em;
+    color: white;
+    border: 2px white solid;
+}
+.login-main .login form .btnDiv{
+    text-align: right;
+}
+.manage-wrap{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.manage-wrap .link-list{
+    width: 15em;
+    height: 100%;
+    float: left;
+    padding-top: 4em;
+    background: #ececec;
+    border-right: 1px #c0c0c0 solid;
+}
+.manage-wrap .link-list ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.manage-wrap .link-list ul li{
+    padding: 1em 0;
+    text-align: center;
+    border-bottom: 1px white solid;
+}
+.manage-wrap .link-list ul li a{
+    cursor: pointer;
+}
+.manage-wrap .manage-content{
+    width: calc(100% - 15em);
+    height: 100%;
+    float: right;
+    padding: 5em 1em;
+}
+.manage-wrap .manage-content .addNewBtn{
+    float: right;
+    margin-top: -2em;
+}

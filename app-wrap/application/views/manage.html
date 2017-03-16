@@ -18,7 +18,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="<?php echo base_url(); ?>index.php/users/logout">退出登陆</a></li>
+                    <li><a href="#">退出登陆</a></li>
                 </ul>
             </div>
         </div>
@@ -35,7 +35,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title"><a href="">新闻文章管理</a></h3>
-                <a href="<?php echo base_url(); ?>index.php/manage/loadnewpost"><button class="btn btn-primary btn-sm addNewBtn">发布文章</button></a>
+                <button class="btn btn-primary btn-sm addNewBtn">发布文章</button>
             </div>
             <div class="panel-body">
                 <table class="table table-hover">
@@ -48,18 +48,69 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <?php
-                    foreach ($posts as $item):?>
                     <tr>
-                        <td> <?php echo $item->id; ?> </td>
-                        <td> <?php echo $item->title; ?> </td>
-                        <td> <?php echo $item->modified; ?> </td>
+                        <td>1</td>
+                        <td>广州琳峰泉矿泉饮料有限公司新闻标题</td>
+                        <td>2017-3-16</td>
                         <td>
-                            <a href="<?php echo base_url(); ?>index.php/manage/loadpost?id=<?php echo $item->id; ?> "><button class="btn btn-sm btn-primary">编辑</button></a>
+                            <button class="btn btn-sm btn-primary">修改</button>
                             <button class="btn btn-sm btn-danger">删除</button>
                         </td>
                     </tr>
-                    <?php endforeach; ?>
+                    <tr>
+                        <td>1</td>
+                        <td>广州琳峰泉矿泉饮料有限公司新闻标题</td>
+                        <td>2017-3-16</td>
+                        <td>
+                            <button class="btn btn-sm btn-primary">修改</button>
+                            <button class="btn btn-sm btn-danger">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>广州琳峰泉矿泉饮料有限公司新闻标题</td>
+                        <td>2017-3-16</td>
+                        <td>
+                            <button class="btn btn-sm btn-primary">修改</button>
+                            <button class="btn btn-sm btn-danger">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>广州琳峰泉矿泉饮料有限公司新闻标题</td>
+                        <td>2017-3-16</td>
+                        <td>
+                            <button class="btn btn-sm btn-primary">修改</button>
+                            <button class="btn btn-sm btn-danger">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>广州琳峰泉矿泉饮料有限公司新闻标题</td>
+                        <td>2017-3-16</td>
+                        <td>
+                            <button class="btn btn-sm btn-primary">修改</button>
+                            <button class="btn btn-sm btn-danger">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>广州琳峰泉矿泉饮料有限公司新闻标题</td>
+                        <td>2017-3-16</td>
+                        <td>
+                            <button class="btn btn-sm btn-primary">修改</button>
+                            <button class="btn btn-sm btn-danger">删除</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>广州琳峰泉矿泉饮料有限公司新闻标题</td>
+                        <td>2017-3-16</td>
+                        <td>
+                            <button class="btn btn-sm btn-primary">修改</button>
+                            <button class="btn btn-sm btn-danger">删除</button>
+                        </td>
+                    </tr>
                     </tbody>
                 </table>
                 <nav aria-label="Page navigation">

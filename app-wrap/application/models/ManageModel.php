@@ -18,6 +18,20 @@ class ManageModel extends CI_Model
         return $query -> result();
     }
 
+    public function getInfo(){
+        //获得公司简介
+        //return $this->db->select('*')->where('id','1')->get('information')->row();
+
+        $query = $this -> db -> get_where('information', array('id' => '1'));
+        return $query ->row();
+    }
+
+    function updateInfo($data){
+        //更新公司简介
+        $this -> db -> where('id',1);
+        return $this -> db -> update('information',$data);
+    }
+
     public function getById($id){
         //按标题获得文章
         $query = $this -> db -> get_where('archives', array('id' => $id));

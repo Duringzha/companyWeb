@@ -24,6 +24,7 @@ class Users extends CI_Controller{
         $this -> usermodel -> u_insert($arr);
     }
 
+
     function login(){
         $user = $this->usermodel->select_by_name($this->security->xss_clean($_POST['username']));
         //调用User_test模型的select_by_name方法查询提交的用户名的信息
@@ -33,35 +34,24 @@ class Users extends CI_Controller{
                 $arr = array(
                     's_id' => $user[0]->id,
                     's_username' => $user[0]->username
-                    );
+                );
                 //设置session
                 $this->session->set_userdata($arr);
                 echo 'login successful!!!<br/>';
-                redirect( 'manage');
-            }
-            else {
+                redirect('manage');
+            } else {
                 echo 'password incorrect';
             }
-        }
-        else {
+        } else {
             echo 'username incorrect';
-        }
-    }
-
-    function is_login(){
-        if($this -> session -> userdata('s_id')){
-            //如果能获得s_id则表示出于登录状态
-            echo 'log in successful!!!';
-            return true;
-        }else{
-            echo 'please login!!!';
-            return false;
         }
     }
 
     function logout(){
         $this -> session -> unset_userdata('s_id');
         //删除此session
-        $this->load->view('users/login');
+        redirect('users');
     }
+
+
 }

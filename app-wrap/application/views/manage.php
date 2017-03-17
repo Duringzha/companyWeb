@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>管理页面</title>
-    <link rel="stylesheet" href="../../assets/css/bootstrap.css" />
-    <link rel="stylesheet" href="../../assets/css/manage.css" />
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/manage.css" />
 </head>
 <body>
 <div class="manage-wrap">
@@ -12,7 +12,7 @@
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">广州琳峰泉矿泉饮料有限公司</a>
+                <a class="navbar-brand" href="<?php echo base_url(); ?>">广州琳峰泉矿泉饮料有限公司</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -85,7 +85,7 @@
         </div>
     </div>
 </div>
-<script type="application/javascript" src="../../assets/js/jquery-1.12.2.min.js"></script>
-<script type="application/javascript" src="../../assets/js/bootstrap.js"></script>
+<script type="application/javascript" src="<?php echo base_url(); ?>assets/js/jquery-1.12.2.min.js"></script>
+<script type="application/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script>
 </body>
 </html>

@@ -168,7 +168,7 @@
     function getDelDataId(){
         $("#delNewsBtn").on('click',function(){
             var dataId = $(".warningPanel").attr("data-id");
-            alert(dataId)
+            window.location.href = '<?php echo base_url(); ?>index.php/manage/deletepost/'+dataId;
         })
     }
 </script>

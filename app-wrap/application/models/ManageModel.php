@@ -18,6 +18,11 @@ class ManageModel extends CI_Model
         return $query -> result();
     }
 
+    function article_list($limit, $offset){
+        $query = $this->db->get('archives', $limit, $offset);
+        return $query->result();
+    }
+
     public function getInfo(){
         //获得公司简介
         //return $this->db->select('*')->where('id','1')->get('information')->row();

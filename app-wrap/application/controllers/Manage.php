@@ -122,7 +122,7 @@ class Manage extends CI_Controller
             redirect( 'manage');
         }
         else{
-            alert('插入失败');
+            echo '插入失败';
             redirect( 'manage');
         }
     }
@@ -134,7 +134,7 @@ class Manage extends CI_Controller
             //删除成功，直接回到管理页面
             redirect('manage');
         }else{
-            alert('删除失败');
+            //alert('删除失败');
             redirect( 'manage');
         }
     }
@@ -164,7 +164,7 @@ class Manage extends CI_Controller
             redirect( 'manage');
         }
         else{
-            alert('插入失败');
+            echo '插入失败';
             redirect( 'manage');
         }
     }

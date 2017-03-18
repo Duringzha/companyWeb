@@ -56,7 +56,8 @@
                         <td> <?php echo $item->modified; ?> </td>
                         <td>
                             <a href="<?php echo base_url(); ?>index.php/manage/loadpost?id=<?php echo $item->id; ?> "><button class="btn btn-sm btn-primary">编辑</button></a>
-                            <button class="btn btn-sm btn-danger" data-toggle="modal" data-target=".warningPanel">删除</button>
+                            <button class="btn btn-sm btn-danger" data-toggle="modal"
+                                    data-target=".warningPanel" data-id="<?php echo $item->id; ?>" onclick="delFun(this)">删除</button>
                         </td>
                     </tr>
                     <?php endforeach; ?>
@@ -99,13 +100,29 @@
                 确定删除文章？
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">确定</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" onclick="windows.location.href='<?php echo base_url(); ?>index.php/manage/deletepost/'getDelDataId()" >确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" >取消</button>
             </div>
         </div>
     </div>
 </div>
 <script type="application/javascript" src="<?php echo base_url(); ?>assets/js/jquery-1.12.2.min.js"></script>
 <script type="application/javascript" src="<?php echo base_url(); ?>assets/js/bootstrap.js"></script>
+<script>
+    $(function(){
+        getDelDataId();
+    });
+    function delFun(obj){
+        var dataId = $(obj).attr("data-id");
+        var warningPanel = $(".warningPanel");
+        warningPanel.attr("data-id",dataId);
+    }
+    function getDelDataId(){
+        $("#delNewsBtn").on('click',function(){
+            var dataId = $(".warningPanel").attr("data-id");
+            alert(dataId)
+        })
+    }
+</script>
 </body>
 </html>

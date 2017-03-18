@@ -54,7 +54,8 @@
                         <td>2017-3-16</td>
                         <td>
                             <button class="btn btn-sm btn-primary">修改</button>
-                            <button class="btn btn-sm btn-danger" data-toggle="modal" data-target=".warningPanel">删除</button>
+                            <button class="btn btn-sm btn-danger delBtn" data-toggle="modal"
+                                    data-target=".warningPanel" data-id="12345" onclick="delFun(this)">删除</button>
                         </td>
                     </tr>
                     <tr>
@@ -147,7 +148,7 @@
                 确定删除文章？
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">确定</button>
+                <button type="button" class="btn btn-primary" id="delNewsBtn">确定</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
             </div>
         </div>
@@ -155,5 +156,21 @@
 </div>
 <script type="application/javascript" src="../../assets/js/jquery-1.12.2.min.js"></script>
 <script type="application/javascript" src="../../assets/js/bootstrap.js"></script>
+<script>
+    $(function(){
+        getDelDataId();
+    });
+    function delFun(obj){
+        var dataId = $(obj).attr("data-id");
+        var warningPanel = $(".warningPanel");
+        warningPanel.attr("data-id",dataId);
+    }
+    function getDelDataId(){
+        $("#delNewsBtn").on('click',function(){
+            var dataId = $(".warningPanel").attr("data-id");
+            alert(dataId)
+        })
+    }
+</script>
 </body>
 </html>

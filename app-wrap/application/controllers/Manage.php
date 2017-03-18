@@ -18,7 +18,7 @@ class Manage extends CI_Controller
             $data['posts'] = $this -> managemodel -> getList();
             $this->load->view('manage', $data);
         } else {
-            redirect('users/login');
+            redirect('users');
         }
     }
 

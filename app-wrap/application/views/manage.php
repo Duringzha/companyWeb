@@ -62,6 +62,8 @@
                     <?php endforeach; ?>
                     </tbody>
                 </table>
+                <?php echo $page; ?>
+                <!--
                 <nav aria-label="Page navigation">
                     <ul class="pagination">
                         <li>
@@ -81,6 +83,7 @@
                         </li>
                     </ul>
                 </nav>
+                -->
             </div>
         </div>
     </div>

@@ -15,11 +15,41 @@ class Manage extends CI_Controller
         //验证登录
         if ($this->session->userdata('s_id')) {
             //若已登录
-            $data['posts'] = $this -> managemodel -> getList();
-            $this->load->view('manage', $data);
+            redirect('manage/loadmanage');
         } else {
             redirect('users');
         }
+    }
+
+    function loadManage()
+    {
+        $limit = 20;////每个页面中希望展示的数量
+        $current_page = 1;//当前页
+        if(!empty($this -> uri -> segment(3))){
+            if(($this -> uri -> segment(3)) > ($this->db->count_all('archives')/$limit))
+            { //防uri乱输，如果大于则
+                $current_page = 1;
+            }else {
+                $current_page = $this->uri->segment(3);
+            }
+        }
+        $offset = ($current_page - 1) * $limit;
+        $result = $this -> managemodel -> article_list($limit, $offset);
+        $data['posts'] = $result;
+
+        $this->load->library('pagination');
+        $config['base_url'] = base_url().'/index.php/manage/loadmanage';
+        $config['per_page'] = $limit;
+        $config['total_rows']= $this->db->count_all('archives');//需要展示的总行数
+        $config['uri_segment'] = 3;
+        $config['use_page_numbers'] = TRUE;
+        $config ['next_link'] = '&laquo;';//下一页链接
+        $config ['prev_link'] = '&raquo;';//上一页链接
+        $config['use_page_numbers'] = TRUE;
+        $this->pagination->initialize($config);
+
+        $data['page'] = $this->pagination->create_links();
+        $this->load->view('manage', $data);
     }
 
     function loadNewPost(){

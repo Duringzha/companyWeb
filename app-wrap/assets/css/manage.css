@@ -58,3 +58,7 @@
     float: right;
     margin-top: -2em;
 }
+.manage-wrap .manage-content .btnWrap{
+    margin-top: 1em;
+    text-align: right;
+}

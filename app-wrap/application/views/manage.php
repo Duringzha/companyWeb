@@ -56,7 +56,7 @@
                         <td> <?php echo $item->modified; ?> </td>
                         <td>
                             <a href="<?php echo base_url(); ?>index.php/manage/loadpost?id=<?php echo $item->id; ?> "><button class="btn btn-sm btn-primary">编辑</button></a>
-                            <button class="btn btn-sm btn-danger">删除</button>
+                            <button class="btn btn-sm btn-danger" data-toggle="modal" data-target=".warningPanel">删除</button>
                         </td>
                     </tr>
                     <?php endforeach; ?>
@@ -81,6 +81,23 @@
                         </li>
                     </ul>
                 </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade warningPanel" tabindex="-1" role="dialog" aria-labelledby="del-warning-panel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">操作提示</h4>
+            </div>
+            <div class="modal-body">
+                确定删除文章？
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
             </div>
         </div>
     </div>

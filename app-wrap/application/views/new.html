@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理页面</title>
+    <link rel="stylesheet" href="../../assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="../../assets/css/manage.css" />
+    <script type="application/javascript" src="../../assets/ueditor/ueditor.config.js"></script>
+    <script type="application/javascript" src="../../assets/ueditor/ueditor.all.js"></script>
+</head>
+<body>
+<div class="manage-wrap">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">广州琳峰泉矿泉饮料有限公司</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">退出登陆</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="link-list">
+        <ul>
+            <li><a href="">公司简介模块管理</a></li>
+            <li><a href="">新闻文章模块编辑</a></li>
+            <li><a href="">生产基地模块管理</a></li>
+            <li><a href="">联系我们模块管理</a></li>
+        </ul>
+    </div>
+    <div class="manage-content">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title"><a href="">新闻文章发布</a></h3>
+            </div>
+            <div class="panel-body">
+                <script id="editor" type="text/plain" style="width:100%;height:50vh;"></script>
+                <div class="btnWrap">
+                    <button class="btn btn-sm btn-primary" onclick="getContent();">获取内容</button>
+                    <button class="btn btn-sm btn-primary" data-toggle="modal" data-target=".warningPanel">提交</button>
+                    <button class="btn btn-sm btn-default">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade warningPanel" tabindex="-1" role="dialog" aria-labelledby="del-warning-panel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="warningPanel">操作提示</h4>
+            </div>
+            <div class="modal-body">
+                确定发布文章？
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">确定</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="application/javascript" src="../../assets/js/jquery-1.12.2.min.js"></script>
+<script type="application/javascript" src="../../assets/js/bootstrap.js"></script>
+<script type="text/javascript">
+    var ue = UE.getEditor('editor');
+    function getContent() {
+        var arr = UE.getEditor('editor').getContent();
+        alert(arr);
+    }
+</script>
+</body>
+</html>
